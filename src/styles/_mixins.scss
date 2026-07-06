@@ -1,0 +1,22 @@
+// Flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Media queries
+@mixin for-size($size) {
+  @if $size == phone {
+    @media (max-width: #{$breakpoint-sm - 1}) { @content; }
+  } @else if $size == tablet {
+    @media (max-width: #{$breakpoint-md - 1}) { @content; }
+  } @else if $size == desktop {
+    @media (min-width: #{$breakpoint-lg}) { @content; }
+  }
+}
+
+// Animation
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+}

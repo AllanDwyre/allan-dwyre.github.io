@@ -1,0 +1,49 @@
+// Importe les variables et mixins EN PREMIER
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Reset de base
+@import 'base';
+
+// Styles globaux
+:root {
+  --primary: $primary;
+  --secondary: $secondary;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-main;
+  font-size: $font-size-base;
+  line-height: 1.6;
+  color: $text;
+  background-color: $background;
+}
+
+// Classes utilitaires
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+.btn {
+  display: inline-block;
+  padding: $spacing-xs $spacing-sm;
+  background: $primary;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background: darken($primary, 15%);
+  }
+}
